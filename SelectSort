@@ -1,0 +1,27 @@
+/* SelectSort Algorithm */
+
+public class Main{
+	public static void main(String[] args) {
+		int[] array = {80,100,50};
+		
+		for(int s = 0; s < array.length-1; s++) {
+			int pos = s;
+			for(int i = s+1; i < array.length; i++) {
+				if (array[i] < array[pos]) {
+					pos = i;		//min(最小値)を求める
+				}
+			}
+		System.out.println("最小値:"+array[pos] +" " + pos);
+		
+		//s番目とpos番目を交換
+		int escape = array[s];		//escapeにs番目を代入
+		array[s] = array[pos];		//配列のs番目に最小値の要素を代入
+		array[pos] = escape;		//配列の最小値にescapeを代入
+		
+		}
+		
+		for(int x : array) {
+			System.out.print(x+",");
+		}
+	}
+}
